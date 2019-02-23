@@ -1,7 +1,6 @@
 # Elite Grub
 
 > Best way to learn more about a restaurant
-
 ## Related Projects
 
 **Main Repo**
