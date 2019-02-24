@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-const { get } = require('./models/model.js');
+const { getUser, getResturant } = require('./models/model.js');
 
 app.use(bodyParser.json());
 
 app.get('/user', (req, res) => {
-  get()
+  getUser()
     .then((data) => {
       res.status(200);
       res.end(JSON.stringify(data));
@@ -21,7 +21,7 @@ app.get('/user', (req, res) => {
 });
 
 app.get('/resturant', (req, res) => {
-  get()
+  getResturant()
     .then((data) => {
       res.status(200);
       res.end(JSON.stringify(data));

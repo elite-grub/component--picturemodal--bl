@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 const Sequelize = require('sequelize');
+const { config } = require('./config.file');
 
 const sequelize = new Sequelize({
-  database: 'mydb',
-  username: 'brianlagman',
-  password: null,
+  database: 'picturemodal',
+  username: config.username,
+  password: config.password,
   dialect: 'postgres',
 });
 
