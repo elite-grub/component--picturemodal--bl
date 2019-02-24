@@ -10,10 +10,13 @@
 - [Service](https://github.com/elite-grub/service-sp)
 - [Proxy](https://github.com/elite-grub/proxy-sp)
 
-## Table of Contents
-1. [Usage](#usage)
-2. [Requirements](#requirements)
-3. [Development](#development)
+## Steps to follow:
+1. Fork Repo and clone repo in your system
+2. `npm install` install all dependencies
+3. ONLY COMPLETE THIS STEP IF YOU HAVE POSTGRESQL INSTALLED
+4. In your ternminal `createdb picturemodal` this will create the database in PostgreSQL
+5. 
+6. 
 
 ## Usage
 
