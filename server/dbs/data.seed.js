@@ -12,38 +12,38 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-const runSeed = (() => {
-  for (let i = 0; i <= 100; i += 1) {
-    const pictures = () => {
-      const arr = [];
-      const num = faker.random.number({ min: 4, max: 18 });
-      for (let j = 1; j <= num; j += 1) {
-        arr.push(`https://s3-us-west-1.amazonaws.com/elite-grub/food${j}.jpg`);
-      }
-      return arr;
-    };
-    // CHANGE FORCE TO TRUE TO RESET THE DATABASE. *** MIGHT CAUSE ERRORS ***
-    module.exports = {
-      UserMod: User.sync({ force: true })
-        .then(() => {
-          User.create({
-            username: faker.internet.userName(),
-            friends_count: faker.random.number({ min: 10, max: 99 }),
-            review_count: faker.random.number({ min: 2, max: 50 }),
-            pic_count: faker.random.number({ min: 0, max: 10 }),
-            elite_status: faker.random.boolean(),
-            review: faker.lorem.sentence(),
-            review_date: faker.date.recent(),
-          });
-        }),
-      ResturantMod: Resturant.sync({ force: true })
-        .then(() => {
-          Resturant.create({
-            pic_count: pictures().length,
-            url: pictures(),
-          });
-        }),
-    };
+const pictures = () => {
+  const arr = [];
+  const num = faker.random.number({ min: 4, max: 18 });
+  for (let j = 1; j <= num; j += 1) {
+    arr.push(`https://s3-us-west-1.amazonaws.com/elite-grub/food${j}.jpg`);
   }
-});
-runSeed();
+  return arr;
+};
+// CHANGE FORCE TO TRUE TO RESET THE DATABASE. *** MIGHT CAUSE ERRORS ***
+
+User.sync({ force: true })
+  .then(() => {
+    for (let i = 0; i <= 100; i += 1) {
+      User.create({
+        username: faker.internet.userName(),
+        friends_count: faker.random.number({ min: 10, max: 99 }),
+        review_count: faker.random.number({ min: 2, max: 50 }),
+        pic_count: faker.random.number({ min: 0, max: 10 }),
+        elite_status: faker.random.boolean(),
+        review: faker.lorem.sentence(),
+        review_date: faker.date.recent(),
+      });
+    }
+  })
+  .catch(err => console.log(err));
+Resturant.sync({ force: true })
+  .then(() => {
+    for (let k = 0; k <= 100; k += 1) {
+      Resturant.create({
+        pic_count: pictures().length,
+        url: pictures(),
+      });
+    }
+  })
+  .catch(err => console.log(err));
