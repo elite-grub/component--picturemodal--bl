@@ -31,6 +31,5 @@ app.get('/restaurant/:resId', (req, res) => {
     });
 });
 
-
 app.use(express.static('./public/dist'));
 app.listen(port, () => console.log('LISTENING TO ANDRE PORT 3000'));
