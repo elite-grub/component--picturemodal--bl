@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const faker = require('faker');
-const { User, Resturant } = require('../orm_schema.js');
+const { User, Restaurant } = require('../orm_schema.js');
 const { sequelize } = require('../models/modal.js');
 
 sequelize
@@ -37,10 +37,10 @@ User.sync({ force: true })
     }
   })
   .catch(err => console.log(err));
-Resturant.sync({ force: true })
+Restaurant.sync({ force: true })
   .then(() => {
     for (let k = 0; k <= 100; k += 1) {
-      Resturant.create({
+      Restaurant.create({
         pic_count: pictures().length,
         url: pictures(),
       });

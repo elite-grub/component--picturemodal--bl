@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-const { getUser, getResturant } = require('./models/modal.js');
+const { getUser, getRestaurant } = require('./models/modal.js');
 
 app.use(bodyParser.json());
 
@@ -20,8 +20,8 @@ app.get('/user/:userId', (req, res) => {
     });
 });
 
-app.get('/resturant/:resId', (req, res) => {
-  getResturant(Number(req.params.resId))
+app.get('/restaurant/:resId', (req, res) => {
+  getRestaurant(Number(req.params.resId))
     .then((data) => {
       res.status(200);
       res.end(JSON.stringify(data));

@@ -25,8 +25,8 @@ module.exports = {
       .then(res => res[0]) // NEED TO INCLUDE [0] TO AVOID UNNESSARY DATA
       .catch(err => err);
   }),
-  getResturant: ((resId) => {
-    return sequelize.query(`SELECT * FROM resturants WHERE id = ${resId}`)
+  getRestaurant: ((resId) => {
+    return sequelize.query(`SELECT * FROM restaurants WHERE id = ${resId}`)
       .then(res => res[0])
       .catch(err => err);
   }),

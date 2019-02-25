@@ -38,7 +38,7 @@ module.exports = {
       allowNull: false,
     },
   }, { timestamps: false }, { freezeTable: true }),
-  Resturant: sequelize.define('resturants', {
+  Restaurant: sequelize.define('restaurants', {
     id: {
       type: Sequelize.INTEGER,
       autoIncrement: true,

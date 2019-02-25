@@ -15,8 +15,10 @@
 2. `npm install` install all dependencies
 3. ONLY COMPLETE THIS STEP IF YOU HAVE POSTGRESQL INSTALLED
 4. In your ternminal `createdb picturemodal` this will create the database in PostgreSQL
-5. `npm start` to start the server
-6. `npm run seed` to create the 100 sample data
+5. Create a  `config.file.js` file you can use the example template
+6. Update your PostgreSQL username and password
+7. `npm start` to start the server
+8. `npm run seed` to create the 100 sample data
 
 ## Usage
 
