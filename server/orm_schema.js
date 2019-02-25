@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const { sequelize } = require('./dbs/index.js');
+const { sequelize } = require('./models/modal.js');
 
 module.exports = {
   User: sequelize.define('users', {
@@ -24,7 +24,7 @@ module.exports = {
       allowNull: false,
     },
     review: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(1234),
       allowNull: false,
     },
     review_date: {
@@ -32,7 +32,7 @@ module.exports = {
       allowNull: false,
     },
   }, { timestamps: false }, { freezeTable: true }),
-  Resturant: sequelize.define('resturant', {
+  Resturant: sequelize.define('resturants', {
     pic_count: {
       type: Sequelize.INTEGER,
     },

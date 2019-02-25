@@ -1,23 +1,39 @@
+const faker = require('faker');
 const { User, Resturant } = require('../orm_schema.js');
+const { sequelize } = require('../models/modal.js');
 
-// if the table exist it will replace if not write more
-module.exports = {
-  UserMod: User.sync({ force: true })
-    .then(() => {
-      User.create({
-        username: 'brian',
-        friends_count: 3,
-        review_count: 5,
-        pic_count: 2,
-        elite_status: true,
-        review: 'Yay this is so cool',
-        review_date: '2019-02-24',
-      });
-    }),
-  ResturantMod: Resturant.sync({ force: true })
-    .then(() => {
-      Resturant.create({
-        pic_count: 4,
-      });
-    }),
-};
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch((err) => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+const runSeed = (() => {
+  for (let i = 0; i <= 1; i += 1) {
+    // CHANGE FORCE TO TRUE TO RESET THE DATABASE INPUT LINE 9 AND 21. *** MIGHT CAUSE ERRORS ***
+    module.exports = {
+      UserMod: User.sync({ force: true })
+        .then(() => {
+          User.create({
+            username: faker.internet.userName(),
+            friends_count: faker.random.number({ min: 10, max: 99 }),
+            review_count: faker.random.number({ min: 2, max: 50 }),
+            pic_count: faker.random.number({ min: 0, max: 10 }),
+            elite_status: faker.random.boolean(),
+            review: faker.lorem.sentence(),
+            review_date: faker.date.recent(),
+          });
+        }),
+      ResturantMod: Resturant.sync({ force: true })
+        .then(() => {
+          Resturant.create({
+            pic_count: faker.random.number({ min: 4, max: 25 }),
+          });
+        }),
+    };
+  }
+});
+runSeed();
