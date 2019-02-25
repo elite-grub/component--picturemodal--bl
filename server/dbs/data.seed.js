@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const faker = require('faker');
 const { User, Resturant } = require('../orm_schema.js');
 const { sequelize } = require('../models/modal.js');
@@ -12,8 +13,16 @@ sequelize
   });
 
 const runSeed = (() => {
-  for (let i = 0; i <= 1; i += 1) {
-    // CHANGE FORCE TO TRUE TO RESET THE DATABASE INPUT LINE 9 AND 21. *** MIGHT CAUSE ERRORS ***
+  for (let i = 0; i <= 100; i += 1) {
+    const pictures = () => {
+      const arr = [];
+      const num = faker.random.number({ min: 4, max: 18 });
+      for (let j = 1; j <= num; j += 1) {
+        arr.push(`https://s3-us-west-1.amazonaws.com/elite-grub/food${j}.jpg`);
+      }
+      return arr;
+    };
+    // CHANGE FORCE TO TRUE TO RESET THE DATABASE. *** MIGHT CAUSE ERRORS ***
     module.exports = {
       UserMod: User.sync({ force: true })
         .then(() => {
@@ -30,7 +39,8 @@ const runSeed = (() => {
       ResturantMod: Resturant.sync({ force: true })
         .then(() => {
           Resturant.create({
-            pic_count: faker.random.number({ min: 4, max: 25 }),
+            pic_count: pictures().length,
+            url: pictures(),
           });
         }),
     };

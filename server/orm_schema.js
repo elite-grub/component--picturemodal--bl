@@ -3,6 +3,12 @@ const { sequelize } = require('./models/modal.js');
 
 module.exports = {
   User: sequelize.define('users', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
     username: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -33,8 +39,17 @@ module.exports = {
     },
   }, { timestamps: false }, { freezeTable: true }),
   Resturant: sequelize.define('resturants', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
     pic_count: {
       type: Sequelize.INTEGER,
+    },
+    url: {
+      type: Sequelize.ARRAY(Sequelize.TEXT),
     },
   }, { timestamps: false }, { freezeTable: true }),
 
