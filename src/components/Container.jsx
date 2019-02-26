@@ -1,6 +1,5 @@
 import React from 'react';
-import Modal from './Modal';
-import Pictures from './Pictures';
+import Controller from './Controller';
 
 class Container extends React.Component {
   constructor() {
@@ -13,10 +12,7 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <button className="back-button" type="submit">back</button>
-        <Pictures />
-        <button className="forward-button" type="submit">forward</button>
-        <Modal />
+        <Controller />
       </div>
     );
   }

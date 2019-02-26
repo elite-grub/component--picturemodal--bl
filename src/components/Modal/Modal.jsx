@@ -1,4 +1,7 @@
 import React from 'react';
+import ModalPic from './ModalPic';
+import ModalInfo from './ModalInfo';
+import '../../../public/dist/style.css';
 
 class Modal extends React.Component {
   constructor() {
@@ -10,8 +13,9 @@ class Modal extends React.Component {
 
   render() {
     return (
-      <div>
-        Modal Info Here!!
+      <div className="modal">
+        <ModalPic />
+        <ModalInfo />
       </div>
     );
   }
