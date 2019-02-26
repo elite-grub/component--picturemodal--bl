@@ -1,0 +1,60 @@
+.outer_pic {
+  height: 200px;
+  width: 175px;
+}
+
+.main_pic {
+  height: 300px;
+  width: 250px;
+}
+
+.pictures {
+  display: flex;
+  justify-content: center;
+}
+
+.controller {
+  display: flex;
+}
+
+.footer {
+  border: solid purple;
+}
+
+/* **************ALL MODAL INFO BELOW************** */
+
+.modal {
+  display: flex;
+  justify-content: center;
+}
+
+/* ModalInfo */
+.user-pic {
+  height: 75px;
+  width: 75px;
+}
+/* ModalPic */
+.modal-pic-container {
+  border: solid green;
+}
+
+/* ModalController */
+.modal-controller {
+  border: solid red;
+  display: flex;
+}
+.modal-pic {
+  height: 400px;
+  width: 300px;
+}
+
+/* ModalInfo */
+.model-info {
+  border: solid blue;
+}
+
+.user {
+  border: solid yellow;
+  display: flex;
+  justify-content: flex-start;
+}
