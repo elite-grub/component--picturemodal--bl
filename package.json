@@ -1,13 +1,18 @@
 {
   "name": "component-picturemodal-bl",
+  "jest": {
+    "verbose": false
+  },
   "version": "1.0.0",
   "description": "component for the pictures and the modal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",
     "build": "webpack --watch",
-    "seed": "node server/dbs/data.seed.js"
+    "seed": "node server/dbs/data.seed.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "eslint": "^5.14.1",
@@ -30,6 +36,8 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
@@ -39,7 +47,9 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "faker": "^4.1.0",
-    "nodemon": "^1.18.10",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
     "path": "^0.12.7",
     "pg": "^7.8.1",
     "react": "^16.8.3",
