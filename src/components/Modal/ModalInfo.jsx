@@ -2,8 +2,8 @@ import React from 'react';
 import '../../../public/dist/style.css';
 
 class ModalInfo extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };
@@ -14,20 +14,20 @@ class ModalInfo extends React.Component {
       <div className="model-info">
         <div className="user">
           <div className="user-avatar">
-            <img className="user-pic" src="https://s3-us-west-1.amazonaws.com/elite-grub/food18.jpg" alt="pic" />
+            <img className="user-pic" src={this.props.user.user_pic} alt="pic" />
           </div>
           <div className="user-info">
-            <div className="user-name">Brian</div>
+            <div className="user-name">{this.props.user.username}</div>
             <div className="user-status">
-              <span className="friends-count">Friends:27</span>
-              <span className="review-count">Reviews:47</span>
-              <span className="user-status">Status</span>
+              <span className="friends-count">{this.props.user.friends_count}</span>
+              <span className="review-count">{this.props.user.review_count}</span>
+              <span className="user-status">{this.props.user.elite_status}</span>
             </div>
           </div>
         </div>
         <div className="user-review">
-          <div className="review">This food sucks im never comming </div>
-          <div className="date"> August 17, 2014</div>
+          <div className="review">{this.props.user.review}</div>
+          <div className="date">{this.props.user.review_date}</div>
           <div className="voting">
             <p className="voting-info">Was this photo.....?</p>
             <div className="helpful-buttons">

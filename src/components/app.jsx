@@ -1,17 +1,18 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import faker from 'faker';
 import axios from 'axios';
 import Container from './Container';
 import Modal from './Modal/Modal';
-import faker from 'faker';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       user: [],
-      restaurant: [],
+      pictures: [],
+      pic_count: [],
     };
   }
 
@@ -31,8 +32,9 @@ class App extends React.Component {
       });
     axios.get(`/restaurant/${num}`)
       .then((res) => {
-        console.log(res.data[0]);
-        this.setState({ restaurant: res.data[0] });
+        console.log(res.data[0].url);
+        this.setState({ pictures: res.data[0].url });
+        this.setState({ pic_count: res.data[0].url.length });
       })
       .catch((err) => {
         console.log(err);
@@ -42,9 +44,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="showcase-container">
-        <Container pictures={this.state.user} />
-        <div className="footer">This is for the basic footer</div>
-        <Modal />
+        <Container pictures={this.state.pictures} />
+        <div className="footer">See all {this.pic_count}</div>
+        <Modal user={this.state.user} pictures={this.state.pictures} pic_count={this.state.pic_count} />
       </div>
     );
   }

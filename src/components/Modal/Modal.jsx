@@ -3,22 +3,11 @@ import ModalPic from './ModalPic';
 import ModalInfo from './ModalInfo';
 import '../../../public/dist/style.css';
 
-class Modal extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <div className="modal">
-        <ModalPic />
-        <ModalInfo />
-      </div>
-    );
-  }
-}
+const Modal = ({ user, pictures, pic_count }) => (
+  <div className="modal">
+    <ModalPic pictures={pictures} pic_count={pic_count} />
+    <ModalInfo user={user} />
+  </div>
+);
 
 export default Modal;
