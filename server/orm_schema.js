@@ -37,6 +37,10 @@ module.exports = {
       type: Sequelize.DATEONLY,
       allowNull: false,
     },
+    user_pic: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   }, { timestamps: false }, { freezeTable: true }),
   Restaurant: sequelize.define('restaurants', {
     id: {

@@ -24,7 +24,7 @@ const pictures = () => {
 
 User.sync({ force: true })
   .then(() => {
-    for (let i = 0; i <= 100; i += 1) {
+    for (let i = 1; i <= 100; i += 1) {
       User.create({
         username: faker.internet.userName(),
         friends_count: faker.random.number({ min: 10, max: 99 }),
@@ -33,6 +33,7 @@ User.sync({ force: true })
         elite_status: faker.random.boolean(),
         review: faker.lorem.sentence(),
         review_date: faker.date.recent(),
+        user_pic: `https://s3-us-west-1.amazonaws.com/elite-grub/food${i}.jpg`,
       });
     }
   })
