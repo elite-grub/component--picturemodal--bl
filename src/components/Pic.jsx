@@ -5,7 +5,6 @@ class Pic extends React.Component {
   constructor() {
     super();
     this.state = {
-
     };
   }
 
