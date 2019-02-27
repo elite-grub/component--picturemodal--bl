@@ -33,6 +33,7 @@ User.sync({ force: true })
         elite_status: faker.random.boolean(),
         review: faker.lorem.sentence(),
         review_date: faker.date.recent(),
+        user_pic: `https://s3-us-west-1.amazonaws.com/elite-grub/food${i}.jpg`,
       });
     }
   })
