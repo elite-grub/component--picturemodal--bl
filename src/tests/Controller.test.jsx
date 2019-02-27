@@ -16,7 +16,8 @@ describe('Testing skelton for the controller component', () => {
   it('Should have one in the controller component', () => {
     expect(wrapper.find(Pictures).length).toBe(1);
   });
+
 });
 
-// expect(wrapper.find(Link).length).toBe(5)
+
 
