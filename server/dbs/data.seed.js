@@ -24,7 +24,7 @@ const pictures = () => {
 
 User.sync({ force: true })
   .then(() => {
-    for (let i = 0; i <= 100; i += 1) {
+    for (let i = 1; i <= 100; i += 1) {
       User.create({
         username: faker.internet.userName(),
         friends_count: faker.random.number({ min: 10, max: 99 }),
