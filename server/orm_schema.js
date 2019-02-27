@@ -49,9 +49,6 @@ module.exports = {
       primaryKey: true,
       allowNull: false,
     },
-    pic_count: {
-      type: Sequelize.INTEGER,
-    },
     url: {
       type: Sequelize.ARRAY(Sequelize.TEXT),
     },
