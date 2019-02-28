@@ -45,7 +45,11 @@ class App extends React.Component {
     return (
       <div className="showcase-container">
         <Container pictures={this.state.pictures} />
-        <div className="footer">See all {this.pic_count}</div>
+        <div className="footer">
+          <i className="material-icons">dashboard</i>
+          See all
+          {this.state.pic_count}
+        </div>
         <Modal user={this.state.user} pictures={this.state.pictures} pic_count={this.state.pic_count} />
       </div>
     );

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react'
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount} from 'enzyme';
 import { config } from '../tests/enzyme.config';
 
 import Pic from '../components/Pic';
