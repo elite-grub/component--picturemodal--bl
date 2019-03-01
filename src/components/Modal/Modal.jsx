@@ -3,9 +3,9 @@ import ModalPic from './ModalPic';
 import ModalInfo from './ModalInfo';
 import '../../../public/dist/style.css';
 
-const Modal = ({ user, pictures, pic_count, openModal }) => (
+const Modal = ({ user, pictures, pic_count, openModal, clickModal }) => (
   <div className="modal" style={{ display: openModal }}>
-    <div className="modal-container">
+    <div className="modal-container" >
       <button className="back-button" type="submit">
         <i className="fas fa-angle-left" />
       </button>
@@ -13,7 +13,7 @@ const Modal = ({ user, pictures, pic_count, openModal }) => (
       <button className="forward-button" type="submit">
         <i className="fas fa-angle-right" />
       </button>
-      <ModalInfo user={user} />
+      <ModalInfo user={user} clickModal={clickModal} />
     </div>
   </div>
 );

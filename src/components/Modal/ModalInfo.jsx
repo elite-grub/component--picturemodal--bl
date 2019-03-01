@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../public/dist/style.css';
 
-const ModalInfo = ({ user }) => {
+const ModalInfo = ({ user, clickModal}) => {
   const dateFormat = (time) => {
     const date = time.slice(8, time.length);
     let month = time.slice(5, 7);
@@ -23,7 +23,7 @@ const ModalInfo = ({ user }) => {
   return (
     <div className="model-info">
       <span className="closex">Close</span>
-      <span className="close">&times;</span>
+      <span className="close" onClick={clickModal}>&times;</span>
       <div className="user">
         <div className="user-avatar">
           <img className="user-pic" src={user.user_pic} alt="pic" />

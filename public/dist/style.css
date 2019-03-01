@@ -1,12 +1,78 @@
+div.food-slide {
+  height: 660px;
+  width: 354px
+}
+
+
+div.Pic {
+  position: relative;
+  height: 220px;
+  width: 220px;
+  overflow: hidden;
+}
+
 .outer_pic {
-  height: 200px;
-  width: 175px;
+  display: block;
+  height: 150%;
 }
 
 .main_pic {
-  height: 300px;
-  width: 250px;
+  display: block;
+  height: 150%;
 }
+
+div.test {
+  position: absolute;
+  top: 6rem;
+  left: 4rem;
+}
+
+div.showcase-container {
+  width: 666px;
+  height: 318px;
+  display: flex;
+  align-items: center;
+}
+
+/* div.container {
+  width: 660px;
+  height: 220px;
+  border: solid aquamarine;
+} */
+
+div.pic3 {
+  position: relative;
+}
+
+div.footer {
+  position: absolute;
+  top: 6rem;
+  left: 485px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #ffffffcf;
+  background-color: #424242a3;
+  height: 150px;
+  width: 150px;
+  box-shadow: 0 0 40px 21px #424242ab;
+}
+
+div.see-all {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+div.footer i.material-icons {
+  color: #ffffffcf;
+  font-size: 25px;
+  justify-content: center;
+  display: flex;
+  margin: 50px 0px 0px 0px;
+}
+
+
+
 
 .pictures {
   display: flex;
@@ -17,9 +83,41 @@
   display: flex;
 }
 
-.footer {
-  border: solid purple;
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
 }
+
+.container:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
 
 /* **************ALL MODAL INFO BELOW************** */
 
@@ -223,6 +321,7 @@ div.user-review {
   position: relative;
   display: block;
   width: 1000px;
+  height: 600px;
   background: black;
   border-radius: 10px 0px 0px 10px;
 }
