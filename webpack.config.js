@@ -29,3 +29,16 @@ module.exports = {
     extensions: ['.jsx', '.js', '.css'],
   },
 };
+
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+//     optimization: {
+//       minimizer: [
+//         new UglifyJsPlugin({
+//           parallel: true,
+//         }),
+//       ],
+//     },
+//     plugins: [
+//       new HardSourceWebpackPlugin(),
+//     ],

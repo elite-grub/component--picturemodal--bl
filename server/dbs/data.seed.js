@@ -42,7 +42,6 @@ Restaurant.sync({ force: true })
   .then(() => {
     for (let k = 0; k <= 100; k += 1) {
       Restaurant.create({
-        pic_count: pictures().length,
         url: pictures(),
       });
     }

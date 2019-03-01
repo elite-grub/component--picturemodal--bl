@@ -3,22 +3,19 @@ import ModalPic from './ModalPic';
 import ModalInfo from './ModalInfo';
 import '../../../public/dist/style.css';
 
-class Modal extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      <div className="modal">
-        <ModalPic />
-        <ModalInfo />
-      </div>
-    );
-  }
-}
+const Modal = ({ user, pictures, pic_count, openModal, clickModal }) => (
+  <div className="modal" style={{ display: openModal }}>
+    <div className="modal-container" >
+      <button className="back-button" type="submit">
+        <i className="fas fa-angle-left" />
+      </button>
+      <ModalPic pictures={pictures} pic_count={pic_count} />
+      <button className="forward-button" type="submit">
+        <i className="fas fa-angle-right" />
+      </button>
+      <ModalInfo user={user} clickModal={clickModal} />
+    </div>
+  </div>
+);
 
 export default Modal;
