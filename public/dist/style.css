@@ -169,6 +169,7 @@ span.closex {
   font-weight: 400;
   top: 4px;
   right: 66px;
+ 
 }
 
 /* ModalInfo */
@@ -435,6 +436,7 @@ span.close {
   font-weight: bold;
   font-size: 36px;
   color: #b3b3b3;
+  cursor: pointer;
 }
 
 i.fas.fa-angle-left {
