@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../public/dist/style.css';
 
-const Container = ({ pictures }) => (
+const Container = ({ pictures, clickModal }) => (
   <div className="container">
     <div className="controller">
       <button className="back-button" type="submit">
@@ -9,18 +9,19 @@ const Container = ({ pictures }) => (
       </button>
       <div className="pictures">
         <div className="Pic">
-          <img className="outer_pic" src={pictures[3]} alt="pic" />
+          <img className="outer_pic" onClick={clickModal} src={pictures[3]} alt="pic" />
         </div>
         <div className="Pic">
-          <img className="outer_pic" src={pictures[1]} alt="pic" />
+          <img className="outer_pic" onClick={clickModal} src={pictures[1]} alt="pic" />
         </div>
         <div className="Pic">
-          <img className="outer_pic" src={pictures[2]} alt="pic" />
+          <img className="outer_pic" onClick={clickModal} src={pictures[2]} alt="pic" />
         </div>
       </div>
       <button className="forward-button" type="submit">
         <i className="material-icons">&#xe315;</i>
       </button>
+
     </div>
   </div>
 );
