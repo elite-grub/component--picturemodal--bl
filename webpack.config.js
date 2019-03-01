@@ -1,6 +1,4 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -30,14 +28,17 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.js', '.css'],
   },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        parallel: true,
-      }),
-    ],
-  },
-  plugins: [
-    new HardSourceWebpackPlugin(),
-  ],
 };
+
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+//     optimization: {
+//       minimizer: [
+//         new UglifyJsPlugin({
+//           parallel: true,
+//         }),
+//       ],
+//     },
+//     plugins: [
+//       new HardSourceWebpackPlugin(),
+//     ],
