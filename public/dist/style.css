@@ -11,10 +11,10 @@ div.Pic {
   overflow: hidden;
 }
 
-.outer_pic {
+/* .outer_pic {
   display: block;
   height: 150%;
-}
+} */
 
 .main_pic {
   display: block;
@@ -79,9 +79,9 @@ div.footer i.material-icons {
   justify-content: center;
 }
 
-.controller {
+/* .controller {
   display: flex;
-}
+} */
 
 .overlay {
   position: absolute;
