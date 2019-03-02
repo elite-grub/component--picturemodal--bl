@@ -50,7 +50,7 @@ class App extends React.Component {
   }
 
   clickOutsideModal(event) {
-    // console.log(this.refs('close'));
+    console.log(this.refs('close'));
   }
 
   render() {
