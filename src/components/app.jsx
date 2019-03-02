@@ -6,8 +6,8 @@ import Container from './Container';
 import Modal from './Modal/Modal';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       openModal: 'none',
       user: [],
@@ -24,14 +24,14 @@ class App extends React.Component {
   }
 
   fetchData() {
-    axios.get(`/user/${this.state.num()}`)
+    axios.get(`http://localhost:3050/user/${this.props.id}`)
       .then((res) => {
         this.setState({ user: res.data[0] });
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`/restaurant/${this.state.num()}`)
+    axios.get(`http://localhost:3050/restaurant/${this.props.id}`)
       .then((res) => {
         this.setState({ pictures: res.data[0].url });
         this.setState({ pic_count: res.data[0].url.length });
