@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
-  "Logging": "/tmp/sample-app",
+  "Logging": "/tmp/picture-modal",
   "Image": {
-  	"Update": "false"
+  	"Update": "true"
   }
 }
