@@ -12,10 +12,6 @@ RUN npm install
 
 RUN npm install -g nodemon
 
-RUN npm install -g webpack
-
 EXPOSE 3050
-
-CMD [ "npm", "run", "build" ]
 
 CMD [ "npm", "start" ]
