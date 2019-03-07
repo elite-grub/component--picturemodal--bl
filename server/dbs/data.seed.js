@@ -21,29 +21,26 @@ const pictures = () => {
   return arr;
 };
 // CHANGE FORCE TO TRUE TO RESET THE DATABASE. *** MIGHT CAUSE ERRORS ***
-
-User.sync({ force: true })
-  .then(() => {
-    for (let i = 1; i <= 100; i += 1) {
-      User.create({
-        username: faker.internet.userName(),
-        friends_count: faker.random.number({ min: 10, max: 99 }),
-        review_count: faker.random.number({ min: 2, max: 50 }),
-        pic_count: faker.random.number({ min: 0, max: 10 }),
-        elite_status: faker.random.boolean(),
-        review: faker.lorem.sentence(),
-        review_date: faker.date.recent(),
-        user_pic: `https://s3-us-west-1.amazonaws.com/elite-grub/food${i}.jpg`,
-      });
-    }
-  })
-  .catch(err => console.log(err));
-Restaurant.sync({ force: true })
-  .then(() => {
-    for (let k = 0; k <= 100; k += 1) {
-      Restaurant.create({
-        url: pictures(),
-      });
-    }
-  })
-  .catch(err => console.log(err));
+const seed = () => {
+  User.sync({ force: true })
+  Restaurant.sync({ force: true })
+    .then(() => {
+      for (let i = 1; i <= 100; i += 1) {
+        User.create({
+          username: faker.internet.userName(),
+          friends_count: faker.random.number({ min: 10, max: 99 }),
+          review_count: faker.random.number({ min: 2, max: 50 }),
+          pic_count: faker.random.number({ min: 0, max: 10 }),
+          elite_status: faker.random.boolean(),
+          review: faker.lorem.sentence(),
+          review_date: faker.date.recent(),
+          user_pic: `https://s3-us-west-1.amazonaws.com/elite-grub/food${i}.jpg`,
+        });
+        Restaurant.create({
+          url: pictures(),
+        });
+      }
+    })
+    .catch(err => console.log(err));
+};
+seed();

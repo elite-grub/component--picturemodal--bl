@@ -13,10 +13,8 @@ class App extends React.Component {
       user: [],
       pictures: [],
       pic_count: [],
-      num: () => Math.floor(Math.random() * 100 + 1),
     };
     this.clickModal = this.clickModal.bind(this);
-    this.clickOutsideModal = this.clickOutsideModal.bind(this);
   }
 
   componentDidMount() {
@@ -24,14 +22,14 @@ class App extends React.Component {
   }
 
   fetchData() {
-    axios.get(`http://localhost:3050/user/${this.props.id}`)
+    axios.get(`/user/${this.props.id}`)
       .then((res) => {
         this.setState({ user: res.data[0] });
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`http://localhost:3050/restaurant/${this.props.id}`)
+    axios.get(`/restaurant/${this.props.id}`)
       .then((res) => {
         this.setState({ pictures: res.data[0].url });
         this.setState({ pic_count: res.data[0].url.length });
@@ -42,16 +40,13 @@ class App extends React.Component {
   }
 
   clickModal() {
-   if(this.state.openModal === 'none') {
-     this.setState({ openModal: 'inline-flex' });
-   } else {
-    this.setState({ openModal: 'none' });
-   }
+    if (this.state.openModal === 'none') {
+      this.setState({ openModal: 'inline-flex' });
+    } else {
+      this.setState({ openModal: 'none' });
+    }
   }
 
-  clickOutsideModal(event) {
-    console.log(this.refs('close'));
-  }
 
   render() {
     return (

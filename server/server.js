@@ -9,19 +9,11 @@ const { getUser, getRestaurant } = require('./models/modal.js');
 
 app.use(bodyParser.json());
 
-// app.use(() => {
-//   return (req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   };
-// });
-
 app.use((req, res, next) => {
   // Website you wish to allow to connect
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Origin', '*');
   // Request headers you wish to allow
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 

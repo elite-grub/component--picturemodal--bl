@@ -1,10 +1,24 @@
-version: '2.1'
+version: '3'
 
 services:
-  picture-modal:
-    image: picture-modal
-    build: .
+  postgres:
+    image : postgres:latest
+    ports:
+     - 5432:5432
     environment:
-      NODE_ENV: production
+      POSTGRES_HOST: localhost
+      POSTGRES_DB: picturemodal
+      POSTGRES_USER: postgres
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:5432"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+
+  picture-modal:
+    image: picturemodal
+    build: picturemodal/
     ports:
       - 3050:3050
+    depends_on:
+      - postgres

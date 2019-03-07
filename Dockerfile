@@ -10,8 +10,6 @@ COPY . /src/app
 
 RUN npm install
 
-RUN npm install -g nodemon
-
 EXPOSE 3050
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "production" ]

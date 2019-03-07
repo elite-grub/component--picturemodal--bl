@@ -4,7 +4,9 @@ const Sequelize = require('sequelize');
 const { config } = require('../dbs/config.file.js');
 
 const sequelize = new Sequelize({
-  database: 'picturemodal',
+  host: config.host,
+  database: config.database,
+  port: config.port,
   username: config.username,
   password: config.password,
   dialect: 'postgres',
