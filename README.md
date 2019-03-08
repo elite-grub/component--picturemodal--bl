@@ -29,7 +29,3 @@
 > PostgreSQL
 
 ## Development
-
-### Installing Dependencies
-
-> Installation instructions
