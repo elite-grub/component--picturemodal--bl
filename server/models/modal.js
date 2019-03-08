@@ -4,11 +4,11 @@ const Sequelize = require('sequelize');
 const { production, development, config } = require('../dbs/config.file.js');
 
 const sequelize = new Sequelize({
-  host: production.host,
-  database: production.database,
-  port: production.port,
-  username: production.username,
-  password: production.password,
+  host: development.host,
+  database: development.database,
+  port: development.port,
+  username: development.username,
+  password: development.password,
   dialect: 'postgres',
 });
 

@@ -10,6 +10,6 @@ COPY . /src/app
 
 RUN npm install
 
-EXPOSE 3050
+EXPOSE 3055
 
 CMD [ "npm", "run", "production" ]

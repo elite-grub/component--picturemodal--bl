@@ -22,14 +22,14 @@ class App extends React.Component {
   }
 
   fetchData() {
-    axios.get(`/user/${this.props.id}`)
+    axios.get(`http://ec2-52-53-136-117.us-west-1.compute.amazonaws.com/user/${this.props.id}`)
       .then((res) => {
         this.setState({ user: res.data[0] });
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`/restaurant/${this.props.id}`)
+    axios.get(`http://ec2-52-53-136-117.us-west-1.compute.amazonaws.com/restaurant/${this.props.id}`)
       .then((res) => {
         this.setState({ pictures: res.data[0].url });
         this.setState({ pic_count: res.data[0].url.length });
