@@ -17,7 +17,7 @@ sequelize.authenticate()
   .then(() => Restaurant.sync({ force: true }))
   .then(() => {
     const promises = [];
-    for (let i = 1; i <= 5; i += 1) {
+    for (let i = 1; i <= 100; i += 1) {
       promises.push(User.create({
         username: faker.internet.userName(),
         friends_count: faker.random.number({ min: 10, max: 99 }),
