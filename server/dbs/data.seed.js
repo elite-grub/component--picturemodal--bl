@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const faker = require('faker');
-const { Pool } = require('pg');
 const { User, Restaurant } = require('../orm_schema.js');
 const { sequelize } = require('../models/modal.js');
 
