@@ -1,14 +1,14 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
 const Sequelize = require('sequelize');
-const { config } = require('../dbs/config.file.js');
+const { production, development } = require('../dbs/config.file.js');
 
 const sequelize = new Sequelize({
-  host: config.host,
-  database: config.database,
-  port: config.port,
-  username: config.username,
-  password: config.password,
+  host: development.host,
+  database: development.database,
+  port: development.port,
+  username: development.username,
+  password: development.password,
   dialect: 'postgres',
 });
 
