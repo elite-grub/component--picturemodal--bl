@@ -11,9 +11,10 @@
   "description": "component for the pictures and the modal",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "build": "webpack --watch",
     "seed": "node server/dbs/data.seed.js",
+    "production": "npm run seed && node server/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"

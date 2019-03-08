@@ -1,12 +1,14 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-console */
 const Sequelize = require('sequelize');
-const { config } = require('../dbs/config.file.js');
+const { production, development, config } = require('../dbs/config.file.js');
 
 const sequelize = new Sequelize({
-  database: 'picturemodal',
-  username: config.username,
-  password: config.password,
+  host: production.host,
+  database: production.database,
+  port: production.port,
+  username: production.username,
+  password: production.password,
   dialect: 'postgres',
 });
 
