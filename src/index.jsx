@@ -1,4 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './components/App';
 
-ReactDOM.render(<h2>Picture Component Under Construction</h2>, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));
+
+import Pictures from './components/app';
+
+window.Pictures = Pictures;

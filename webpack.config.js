@@ -19,9 +19,26 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.js', '.css'],
   },
 };
+
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+//     optimization: {
+//       minimizer: [
+//         new UglifyJsPlugin({
+//           parallel: true,
+//         }),
+//       ],
+//     },
+//     plugins: [
+//       new HardSourceWebpackPlugin(),
+//     ],
